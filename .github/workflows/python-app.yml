@@ -33,5 +33,6 @@ jobs:
     
     - name: pytest
       run: |
+        cd .github/actions/main
         pytest --cov main test_main.py -v
     
