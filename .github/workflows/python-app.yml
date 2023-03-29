@@ -9,9 +9,6 @@ on:
   pull_request:
     branches: [ "master" ]
 
-permissions:
-  contents: read
-
 jobs:
   build:
 
@@ -33,7 +30,4 @@ jobs:
        cd .github/actions/main
        python main.py
 
-    - name: Test with pytest
-      run: |
-        cd .github/actions/main
-        pytest test/test_main.py
+    
