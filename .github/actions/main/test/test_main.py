@@ -1,3 +1,4 @@
+import sys
 sys.path.insert(0,'.github/actions/main')
 from main import add,main
 
