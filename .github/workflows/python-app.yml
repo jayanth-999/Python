@@ -29,11 +29,10 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: run python 
       run: |
-       ls /runner/_work/Python/Python
-       pwd
-       cd  ls /runner/_work/Python/Python/.github/actions/main
+       cd .github/actions/main
        python main.py
 
     - name: Test with pytest
       run: |
+        cd .github/actions/main
         pytest test/test_main.py
