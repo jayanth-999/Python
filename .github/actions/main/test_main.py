@@ -19,4 +19,6 @@ def mock_os_getenv():
 
 def test_range_mocked(mock_os_getenv):
     range = os.getenv('range')
+    sys.argv[0]="hi"
+    main()
     assert range == '10'
