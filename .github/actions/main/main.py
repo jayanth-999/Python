@@ -1,6 +1,8 @@
 import sys,os
-range=os.getenv('RANGE')
+name=os.getenv('NAME')
 
 def main():
-   add=range
+   if name == "jayanth":
+      print("sucsses")
+   add=srt(name)
    print(add)
