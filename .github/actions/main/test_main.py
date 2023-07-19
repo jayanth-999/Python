@@ -17,7 +17,7 @@ from main import main
 
 @pytest.mark.parametrize("read_value", ["jayanth",'varshith'])  # Add the desired values for testing
 def test_main(read_value, monkeypatch, capsys):
-    monkeypatch.setenv("RANGE", str(read_value))
+    monkeypatch.setenv("RANGE", read_value)
     main()
     captured_output = capsys.readouterr()
     # assert captured_output.out.strip() == str(range_value)
