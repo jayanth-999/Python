@@ -4,5 +4,9 @@ name=os.getenv('NAME')
 def main():
    if name == "jayanth":
       print("sucsses")
+   sample={
+      "jayanth":"success",
+      "varshith":"failed"
+   }
    add=(name)
-   print(add)
+   print(sample[name])
