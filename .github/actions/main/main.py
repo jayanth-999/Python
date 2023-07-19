@@ -1,9 +1,5 @@
 import sys,os
-range=os.getenv('range')
+range=os.getenv('RANGE')
 
 def main():
-    global sample
-    global range
-    range=int(range)
-    sample=sys.argv[0]
-    print(sample)
+   print(range)
