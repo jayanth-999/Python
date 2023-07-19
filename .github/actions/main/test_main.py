@@ -6,19 +6,10 @@ from unittest.mock import patch
 sys.path.insert(0,'.github/actions/main')
 from main import main
 
-def test_main(monkeypatch, capsys):
-    monkeypatch.setenv('range', '10')
-    sys.argv = ['sample.py', 'argument1']
-    main()
-    captured = capsys.readouterr()
-
-@pytest.fixture
-def mock_os_getenv():
-    with patch.object(os, 'getenv', return_value='10'):
-        yield
-
-def test_range_mocked(mock_os_getenv):
-    range = os.getenv('range')
-    sys.argv[0]="hi"
-    main()
-    assert range == '10'
+@pytest.mark.parametrize("range_value", [10, 20, 30])  # Add the desired values for testing
+def test_main(range_value):
+    with monkeypatch.context() as m:
+        m.setenv("RANGE", str(range_value))
+        captured_output = capsys.readouterr()
+        main()
+        assert captured_output.out.strip() == str(range_value)
