@@ -26,15 +26,15 @@ jobs:
         pip install pytest
         pip install pytest-cov
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    - name: run python 
-      run: |
-       cd .github/actions/main
-       python main.py
+#     - name: run python 
+#       run: |
+#        cd .github/actions/main
+#        python main.py
     
     - name: pytest
       run: |
         cd .github/actions/main
         pytest --cov main test_main.py -v
-      env:
-       range: 1
+#       env:
+#        range: 1
     
