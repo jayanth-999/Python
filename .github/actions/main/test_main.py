@@ -15,9 +15,9 @@ from main import main
 #         main()
 #         assert captured_output.out.strip() == str(range_value)
 
-@pytest.mark.parametrize("range_value", ["jayanth",'varshith'])  # Add the desired values for testing
+@pytest.mark.parametrize("read_value", ["jayanth",'varshith'])  # Add the desired values for testing
 def test_main(range_value, monkeypatch, capsys):
-    monkeypatch.setenv("RANGE", str(range_value))
+    monkeypatch.setenv("RANGE", str(read_value))
     main()
     captured_output = capsys.readouterr()
     # assert captured_output.out.strip() == str(range_value)
