@@ -15,7 +15,7 @@ from main import main
 #         main()
 #         assert captured_output.out.strip() == str(range_value)
 
-@pytest.mark.parametrize("range_value", "jayanth")  # Add the desired values for testing
+@pytest.mark.parametrize("range_value", ["jayanth",'varshith'])  # Add the desired values for testing
 def test_main(range_value, monkeypatch, capsys):
     monkeypatch.setenv("RANGE", str(range_value))
     main()
