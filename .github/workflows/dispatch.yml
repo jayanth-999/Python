@@ -15,5 +15,5 @@ jobs:
     steps:
     - run: |
         echo 'name : ${{github.event.inputs.name}}
-        echo 'discription : ${{github.event.inputs.discription}}
+        echo 'discription : ${{github.event.inputs.description}}
       
