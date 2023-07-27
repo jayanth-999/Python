@@ -1,0 +1,19 @@
+name: workflow dispatch testing  
+on :
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'User Name'
+        required: true
+      reason:
+        description: "reson for the run"
+        required: false
+
+jobs:
+  PrintInputs:
+    runs-on: ubuntu-latest
+    steps:
+    - run: |
+        echo 'name : ${{github.event.inputs.name}}
+        echo 'discription : ${{github.event.inputs.discription}}
+      
